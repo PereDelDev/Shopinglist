@@ -1,0 +1,36 @@
+<section class="formulario">
+    <div class="add">
+        <h2>Añadir Producto</h2>
+        <form [formGroup]="formulario" (ngSubmit)="add()">
+            <input class="texto" type="text" formControlName="newIteam">
+            <input class="btn" type="submit">
+        </form>
+    </div>
+</section>
+
+<section class="listas">
+
+    <div class="lista">
+        <h2>Lista</h2>
+        <ul>
+            @for (objeto of listaCompra; track $index) {
+            <li>{{objeto}} <input type="button" value="X" style="color: red;" (click)="delete($index)"> <input
+                    type="button" value="->" style="color: green;" (click)="bought(objeto, $index)"></li>
+            }
+
+        </ul>
+    </div>
+    <div class="comprados">
+        <h2>Comprado</h2>
+        <ul>
+            @for (objeto of listaComprada; track $index) {
+            <li>{{objeto}} <input type="button" value="X" style="color: red;" (click)="delete2($index)"></li>
+            }
+
+        </ul>
+    </div>
+
+
+
+
+</section>

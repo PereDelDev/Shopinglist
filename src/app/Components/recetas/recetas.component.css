@@ -1,0 +1,44 @@
+.fondo {
+    background-color: beige;
+    min-height: calc(100vh - 50px);
+
+
+}
+
+section {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    padding-top: 50px;
+
+}
+
+.receta {
+    width: 250px;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: blanchedalmond;
+
+}
+
+.imagen {
+    width: 100%;
+    height: 150px;
+
+
+
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+
+}

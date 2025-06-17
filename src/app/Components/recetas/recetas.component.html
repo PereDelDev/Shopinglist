@@ -1,0 +1,15 @@
+<div class="fondo">
+
+    <section>
+
+        @for(receta of listaRecetas; track $index){
+        <div class="receta" [routerLink]="[receta.id]">
+            <h2>{{receta.nombre}}</h2>
+            <div class="imagen">
+                <img [src]="receta.foto" alt="">
+            </div>
+        </div>
+
+        }
+    </section>
+</div>

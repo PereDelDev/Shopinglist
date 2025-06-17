@@ -1,0 +1,71 @@
+.listas,
+.formulario {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.lista,
+.comprados {
+    border: 2px solid black;
+    width: 200px;
+    background-color: bisque;
+    text-align: center;
+    min-height: 120px;
+
+    & li {
+        padding: 5px;
+        list-style: none;
+
+    }
+}
+
+.formulario {
+    width: auto;
+    padding: 20px 0px;
+    border-bottom: 3px solid black;
+}
+
+.listas {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    gap: 40px;
+    padding-top: 40px;
+}
+
+.add {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 250px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px 0px;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(70, 147, 70);
+
+    & h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    & .texto {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    & .btn {
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgb(138, 168, 57);
+    }
+
+
+
+
+}
