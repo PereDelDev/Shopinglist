@@ -1,1 +1,21 @@
-<p>detalle-receta works!</p>
+<h2>{{receta.nombre}}</h2>
+<figure class="foto">
+
+
+    <img [src]="receta.foto" [alt]="receta.nombre">
+</figure>
+
+<div class="ingredientes">
+    <p>Ingredientes:</p>
+    <ul>
+
+        @for(ingrediente of receta.ingredientes; track $index){
+        <li>{{ingrediente}}<input type="button" value="->" style="color: green;" (click)="add(ingrediente)"></li>
+        }
+    </ul>
+</div>
+<div class="contenido">
+    <p>{{receta.contenido}}
+
+    </p>
+</div>

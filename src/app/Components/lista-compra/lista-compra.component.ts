@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ShoppingService } from '../../shopping.service';
 
 @Component({
   selector: 'app-lista-compra',
@@ -10,31 +11,45 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class ListaCompraComponent {
 
-  listaCompra: string[] = ['zanahoria', 'calamares']
+  listaCompra: string[] = ['fdsa']
   listaComprada: string[] = []
+  shoppingServices = inject(ShoppingService)
+
+
+  ngOnInit() {
+
+    this.listaCompra = this.shoppingServices.getList()
+    this.listaComprada = this.shoppingServices.getListB()
+  }
+
 
   add() {
-    console.log(this.formulario.value.newIteam)
-    if (this.formulario.value.newIteam !== null) {
-      this.listaCompra.push(this.formulario.value.newIteam)
+
+
+    if (this.formulario.value.newItem !== null) {
+      this.shoppingServices.addItem(this.formulario.value.newItem)
       this.formulario.reset()
+      this.listaCompra = this.shoppingServices.getList()
+      console.log(this.formulario.value.newItem)
     }
   }
 
   delete(position: number) {
-    this.listaCompra.splice(position, 1)
+    this.shoppingServices.removeItem(position)
   }
   delete2(position: number) {
-    this.listaComprada.splice(position, 1)
+    this.shoppingServices.removeItemB(position)
+
   }
 
   bought(valor: string, position: number) {
-    this.listaComprada.push(valor)
-    this.listaCompra.splice(position, 1)
+    this.shoppingServices.addItemB(valor)
+
+    this.shoppingServices.removeItem(position)
   }
 
   formulario: FormGroup = new FormGroup({
-    newIteam: new FormControl()
+    newItem: new FormControl()
   })
 
 
